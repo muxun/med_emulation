@@ -1,1 +1,31 @@
+#!/bin/bash
 
+while true; do
+
+LUG=$((RANDOM%10))
+BOK=$((RANDOM%10))
+VYB=$((RANDOM%10))
+
+
+for n in $(seq $LUG)
+do
+echo "INSERT INTO statistica VALUES('luga',floor(random()*(10-1+1))+1,floor(random()*(10-1+1))+1,floor(random()*(10-1+1))+1,'2018-08-23')" | psql -U postgres zdrav
+echo "luga insert $LUG "
+done
+
+for n in $(seq $VYB)
+do
+echo "INSERT INTO statistica VALUES('vyborg',floor(random()*(10-1+1))+1,floor(random()*(10-1+1))+1,floor(random()*(10-1+1))+1,'2018-08-23')" | psql -U postgres zdrav
+echo "vyborg insert $VYB"
+done
+
+for n in $(seq $BOK)
+do
+echo "INSERT INTO statistica VALUES('boksit',floor(random()*(10-1+1))+1,floor(random()*(10-1+1))+1,floor(random()*(10-1+1))+1,'2018-08-23')" | psql -U postgres zdrav
+echo "boksit insert $BOK"
+done
+
+
+sleep 30
+
+done
